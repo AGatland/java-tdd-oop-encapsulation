@@ -22,13 +22,13 @@ class RemoteControlledCarTest {
     @Test
     public void testChooseDisposableBatteryTypeForRC() {
         RemoteControlledCar rc = new RemoteControlledCar("Red", "disposable");
-        Assertions.assertNotEquals("disposable", rc.battery.type);
+        Assertions.assertEquals("disposable", rc.battery.type);
     }
 
     @Test
     public void testChooseRechargableBatteryTypeForRC() {
         RemoteControlledCar rc = new RemoteControlledCar("Red", "rechargable");
-        Assertions.assertNotEquals("rechargable", rc.battery.type);
+        Assertions.assertEquals("rechargable", rc.battery.type);
     }
 
 }
