@@ -9,14 +9,26 @@ class RemoteControlledCarTest {
 
     @Test
     public void testChooseColorForRC() {
-        RemoteControlledCar rc = new RemoteControlledCar("Red");
+        RemoteControlledCar rc = new RemoteControlledCar("Red", "disposable");
         Assertions.assertEquals("Red", rc.colour);
     }
 
     @Test
     public void testChooseColorForRCWrongColour() {
-        RemoteControlledCar rc = new RemoteControlledCar("Red");
+        RemoteControlledCar rc = new RemoteControlledCar("Red", "disposable");
         Assertions.assertNotEquals("White", rc.colour);
+    }
+
+    @Test
+    public void testChooseDisposableBatteryTypeForRC() {
+        RemoteControlledCar rc = new RemoteControlledCar("Red", "disposable");
+        Assertions.assertNotEquals("disposable", rc.battery.type);
+    }
+
+    @Test
+    public void testChooseRechargableBatteryTypeForRC() {
+        RemoteControlledCar rc = new RemoteControlledCar("Red", "rechargable");
+        Assertions.assertNotEquals("rechargable", rc.battery.type);
     }
 
 }
