@@ -49,4 +49,10 @@ class RemoteControlledCarTest {
         Assertions.assertNotEquals("advanced", rc.remoteType);
     }
 
+    @Test
+    public void testGetBatteryPercentageRemaining() {
+        RemoteControlledCar rc = new RemoteControlledCar("Red", "disposable", "simple");
+        Assertions.assertEquals(100, rc.getBatteryPercentage());
+    }
+
 }
