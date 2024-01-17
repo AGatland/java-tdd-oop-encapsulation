@@ -10,4 +10,8 @@ public class RemoteControlledCar {
         this.battery = new Battery(batteryType);
         this.remoteType = remoteType;
     }
+
+    public int getBatteryPercentage() {
+        return this.battery.getBatteryRemaining();
+    }
 }
